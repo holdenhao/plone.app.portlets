@@ -52,7 +52,7 @@ class INavigationPortlet(IPortletDataProvider):
     includeTop = schema.Bool(
             title=_(u"label_include_top_node", default=u"Include top node"),
             description=_(u"help_include_top_node",
-                          default=u"Whether or not to show the top, or 'root', "
+                          default=u"Whether or not to show the top or 'root' "
                                    "node in the navigation tree. This is affected "
                                    "by the 'Start level' setting."),
             default=False,
@@ -72,12 +72,12 @@ class INavigationPortlet(IPortletDataProvider):
             title=_(u"label_navigation_startlevel", default=u"Start level"),
             description=_(u"help_navigation_start_level",
                 default=u"An integer value that specifies the number of folder "
-                         "levels below the site root that must be exceeded "
-                         "before the navigation tree will display. 0 means "
-                         "that the navigation tree should be displayed "
-                         "everywhere including pages in the root of the site. "
-                         "1 means the tree only shows up inside folders "
-                         "located in the root and downwards, never showing "
+                         "levels below the root node that must be exceeded "
+                         "before the navigation portlet will display. 0 means "
+                         "that the portlet should be displayed "
+                         "everywhere including pages in the root node. "
+                         "1 means the navigation portlet only shows up inside folders "
+                         "located in the root node and downwards, never showing "
                          "at the top level."),
             default=1,
             required=False)
@@ -86,9 +86,9 @@ class INavigationPortlet(IPortletDataProvider):
             title=_(u"label_navigation_tree_depth",
                     default=u"Navigation tree depth"),
             description=_(u"help_navigation_tree_depth",
-                          default=u"How many folders should be included "
-                                   "before the navigation tree stops. 0 "
-                                   "means no limit. 1 only includes the "
+                          default=u"How many folders below the root node "
+                                   "before the navigation portlet stops displaying. "
+                                   "0 means no limit. 1 only includes the "
                                    "root folder."),
             default=0,
             required=False)
